@@ -12,11 +12,23 @@
         "omelet" becomes "omelet-yay" 
 */
 function encodeVowelWord(word) {
-  return ""; // replace this!
+  let vowels = ["a", "e", "i", "o", "u"]
+  for(let i =0;i < vowels.length;i +=1){
+    let vowel = vowels[i]
+    if(word.startsWith(vowel)){
+      word += "-yay"
+    }
+  }
+  return word
 }
 
 // Write your unit tests here
-
+let result = encodeVowelWord("eat")
+console.assert(result === "eat-yay",{
+  test: "encodeVowelWord on eat",
+  expected: "eat-yay",
+  result:result
+})
 /*  --------------------------------------------------------
     encodeConsonantWord()
 
@@ -28,12 +40,29 @@ function encodeVowelWord(word) {
         "latin" becomes "atin-lay"
         "cheers" becomes "eers-chay"
 */
+let vowels = ["a", "e", "i", "o", "u"]
 function encodeConsonantWord(word) {
-  return ""; // replace this!
+  let starterLetter = []
+  for(let i =0;i < vowels.length;i +=1){
+    let letter = word[i]
+  if (vowels.includes(letter)){
+      let slicedWord = word.slice(i)
+      return `${slicedWord}-${starterLetter.join("")}ay`
+    }else {
+      starterLetter.push(letter)
+    }
+  }
+
 }
 
-// Write your unit tests here
 
+// Write your unit tests here
+let r = encodeConsonantWord("latin")
+console.assert(r === "atin-lay",{
+  test: "encodeVowelWord on latin",
+  expected: "atin-lay",
+  r:r
+})
 /*  --------------------------------------------------------
     encodeWord()
 
@@ -48,18 +77,40 @@ function encodeConsonantWord(word) {
         "you" becomes "ou-yay" because it starts with a consonant "y"
 */
 function encodeWord(word) {
-  return ""; // replace this!
+  if (word === encodeVowelWord){
+
+  }else{word === encodeConsonantWord
+  }
+  return word
 }
 
 // Write your unit tests here
-
+let end = encodeConsonantWord("latin")
+console.assert(end === "atin-lay",{
+  test: "encodeVowelWord on latin",
+  expected: "atin-lay",
+  end:end
+})
 /*  --------------------------------------------------------
     encodeText()    
 
     Encode a full sentence or paragraph from english to pig latin.
 */
-function encodeText(text) {
-  return ""; // replace this!
+function encodeText(text){
+let result =[]
+let myText = text.split("")
+for(let i =0;i<myText.length;i+=1){
+  let word = myText[i]
+result += encodeWord(word) + " "
+}
+return result.trim()
 }
 
+
+
 // Write your unit tests here
+console.assert(encodeText() === "e-thay uick-qay own-bray oxf-ay umps-jay over-yay e-thay azy-lay og-day",{
+  "test": encodeText("The quick brown fox jumps over the lazy dog"),
+  "expected": "e-thay uick-qay own-bray oxf-ay umps-jay over-yay e-thay azy-lay og-day",
+  "result": encodeText("The quick brown fox jumps over the lazy dog")
+})
