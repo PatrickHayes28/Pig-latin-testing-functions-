@@ -109,7 +109,7 @@ return result.trim()
 
 
 // Write your unit tests here
-console.assert(encodeText() === "e-thay uick-qay own-bray oxf-ay umps-jay over-yay e-thay azy-lay og-day",{
+console.assert(encodeText("The quick brown fox jumps over the lazy dog") === "e-thay uick-qay own-bray oxf-ay umps-jay over-yay e-thay azy-lay og-day",{
   "test": encodeText("The quick brown fox jumps over the lazy dog"),
   "expected": "e-thay uick-qay own-bray oxf-ay umps-jay over-yay e-thay azy-lay og-day",
   "result": encodeText("The quick brown fox jumps over the lazy dog")
