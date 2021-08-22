@@ -76,9 +76,9 @@ console.assert(r === "atin-lay", {
 */
 function encodeWord(word) {
   if (vowels.includes(word[0])) {
-    encodeVowelWord(word);
+    return encodeVowelWord(word);
   } else {
-    encodeConsonantWord(word);
+    return encodeConsonantWord(word);
   }
 }
 
