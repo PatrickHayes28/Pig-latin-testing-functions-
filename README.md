@@ -1,5 +1,1 @@
-# Kenzie Unit Test Activity
-
-Complete your work inside of `code.js`
-
-Follow the instructions provided on my.kenzie.academy for this assignment.
+A project for learning unit testing in which I tested functions for converting words into pig latin.
